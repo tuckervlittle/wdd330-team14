@@ -3,7 +3,9 @@ import { getLocalStorage } from './utils.mjs';
 function renderCartContents() {
   let cartItems = getLocalStorage('so-cart');
   if (!Array.isArray(cartItems)) {
-    cartItems = []; // fallback to empty array
+
+    cartItems = [];
+
   }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
