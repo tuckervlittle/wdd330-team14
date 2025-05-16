@@ -14,7 +14,6 @@ export default class ProductDetails {
         document
             .getElementById('addToCart')
             .addEventListener('click', this.addProductToCart.bind(this));         
-        
     }
 
     addProductToCart() {
@@ -24,7 +23,6 @@ export default class ProductDetails {
         // }
         cartItems.push(this.product);
         setLocalStorage("so-cart", cartItems);
-        
     }
 
     renderProductDetails() {
