@@ -22,8 +22,7 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-
-
+// get the product id from the queryString
 export function getParam(param){
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -32,3 +31,11 @@ export function getParam(param){
   return product;
 }
 
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+  const htmlStrings = list.map(templateFn);
+
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
