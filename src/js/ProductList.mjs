@@ -1,6 +1,16 @@
 import { renderListWithTemplate } from './utils.mjs';
 
 function productCardTemplate(product) {
+    // Calculate discount if needed
+  const discount = product.SuggestedRetailPrice && product.FinalPrice
+  ? product.SuggestedRetailPrice - product.FinalPrice : 0;
+
+// Only show discount if there is one
+const discountHtml = discount > 0
+  ? `<div class="discount-indicator">Save $${discount.toFixed(2)}!</div>`
+  : "";
+  
+    
     return `<li class="product-card">
         <a href="product_pages/?product=${product.Id}">
             <img src="${product.Image}" alt="${product.Name}">
