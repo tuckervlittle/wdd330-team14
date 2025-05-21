@@ -8,7 +8,7 @@ function productCardTemplate(product) {
 
   // Only show discount if there is one
   const discountHtml = discount > 0
-    ? `<div class="discount-indicator">Save $${discount.toFixed(2)}!</div>`
+    ? `<p class="discount-indicator">Save $${discount.toFixed(2)}!</p>`
     : "";
   
     
@@ -18,6 +18,7 @@ function productCardTemplate(product) {
             <h2 class="card_brand">${product.Brand.Name}</h2>
             <h3 class="card_name">${product.Name}</h3>
             <p class="product-card_price">$${product.FinalPrice}</p>
+            ${discountHtml}
         </a>
     </li>
     `;
