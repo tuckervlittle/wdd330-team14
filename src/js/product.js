@@ -1,4 +1,3 @@
-
 import { getParam } from './utils.mjs';
 
 import ProductData from './ProductData.mjs';
@@ -9,7 +8,6 @@ const productId = getParam('product');
 
 const productDetails = new ProductDetails(productId, dataSource);
 productDetails.init();
-
 
 // add to cart button event handler
 // async function addToCartHandler(e) {
