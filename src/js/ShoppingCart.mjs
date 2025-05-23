@@ -10,10 +10,17 @@ export function renderCartContents() {
 }
 
 function cartItemTemplate(item) {
+    let cartImage = null;
+    if (!item.Images) {
+        cartImage = item.Image;
+    }
+    else {
+        cartImage = item.Images.PrimarySmall;
+    }
     const newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
     <img
-    src="${item.Image}"
+    src="${cartImage}"
     alt="${item.Name}"
     />
     </a>
