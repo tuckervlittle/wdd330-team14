@@ -35,7 +35,7 @@ function buildProductDetails(product) {
     document.querySelector('h2').textContent = product.NameWithoutBrand;
 
     const image = document.getElementById('productImage');
-    image.src = product.Image;
+    image.src = product.Images.PrimaryLarge;
     image.alt = product.NameWithoutBrand;
     document.getElementById('productPrice').textContent = product.FinalPrice;
     document.getElementById('productColor').textContent = product.Colors.ColorName;
