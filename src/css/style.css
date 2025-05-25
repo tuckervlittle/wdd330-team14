@@ -223,7 +223,7 @@ button {
   margin: 0 auto;
 }
 
-.cart-card > *{
+.cart-card > * {
   text-decoration: none;
   color: var(--dark-grey);
 }
