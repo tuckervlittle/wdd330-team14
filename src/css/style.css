@@ -294,6 +294,12 @@ button {
   border-radius: 0.5em;
   font-weight: bold;
   margin-top: 0.5em;
+  font-size: 1em;
+}
+
+.product-card.discounted {
+  border: 2px solid #e53935;
+  box-shadow: 0 0 10px rgba(229, 57, 53, 0.15);
 }
 
 @media screen and (min-width: 600px) {
