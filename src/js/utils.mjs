@@ -32,7 +32,7 @@ export function getParam(param){
 }
 
 export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
-  const htmlStrings = list.map(template);
+  const htmlStrings = list.map(template);}
   // if clear is true we need to clear out the contents of the parent.
 export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
   const htmlStrings = list.map(templateFn);
@@ -65,4 +65,4 @@ export async function loadHeaderFooter() {
 
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
-}
+};
