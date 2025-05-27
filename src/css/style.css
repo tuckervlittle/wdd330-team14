@@ -154,6 +154,16 @@ button {
 .products {
   margin-top: 2rem;
   padding: 1rem;
+  align-items: center;
+
+}
+.product-grid{
+  display: flex;
+  flex-direction: row;
+}
+.product-grid a img{
+  width: 25%;
+  height: auto;
 }
 
 .product-list {
