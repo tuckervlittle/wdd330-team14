@@ -3,25 +3,26 @@ import { renderListWithTemplate } from './utils.mjs';
 
 function productCardTemplate(product) {
     // Calculate discount if needed
-  const discount = product.SuggestedRetailPrice && product.FinalPrice
-  ? product.SuggestedRetailPrice - product.FinalPrice : 0;
+    const discount = product.SuggestedRetailPrice && product.FinalPrice
+    ? product.SuggestedRetailPrice - product.FinalPrice : 0;
 
-  // Only show discount if there is one
-  const discountHtml = discount > 0
+    // Only show discount if there is one
+    const discountHtml = discount > 0
     ? `<p class="discount-indicator">Save $${discount.toFixed(2)}!</p>`
     : "";
   
+    const imageUrl = product.Images?.PrimaryMedium || product.Images?.PrimarySmall || 'images/placeholder.jpg';
+
     
-  return `<li class="product-card">
-        <a href="../product_pages/?product=${product.Id}">
-            <img src="${product.Images.PrimaryMedium}" alt="${product.Name}">
-            <h2 class="card_brand">${product.Brand.Name}</h2>
-            <h3 class="card_name">${product.Name}</h3>
-            <p class="product-card_price">$${product.FinalPrice}</p>
-            ${discountHtml}
+    return `<li class="product-card">
+        <a href="../product_pages/index.html?product=${product.Id}">
+      <img src="${imageUrl}" alt="${product.Name}">
+      <h2 class="card_brand">${product.Brand.Name}</h2>
+      <h3 class="card_name">${product.Name}</h3>
+      <p class="product-card_price">$${product.FinalPrice}</p>
+      ${discountHtml}
         </a>
-    </li>
-    `;
+    </li>`;
 }
 
 export default class ProductList {

@@ -35,7 +35,7 @@ function buildProductDetails(product) {
     document.querySelector('h2').textContent = product.NameWithoutBrand;
 
     const image = document.getElementById('productImage');
-    image.src = product.Images.PrimaryLarge;
+    image.src = product.Images.PrimaryLarge || product.Images.PrimaryMedium || 'images/placeholder.jpg';
     image.alt = product.NameWithoutBrand;
     document.getElementById('productPrice').textContent = product.FinalPrice;
     document.getElementById('productColor').textContent = product.Colors.ColorName;

@@ -1,5 +1,15 @@
 import { loadHeaderFooter } from './utils.mjs';
-import { renderCartContents } from './ShoppingCart.mjs';
+import CheckoutProcess from './CheckoutProcess.mjs';
 
 loadHeaderFooter();
-renderCartContents();
+
+const checkout = new CheckoutProcess();
+checkout.init();
+
+// Calculate order total when the zip code is entered
+const zipInput = document.querySelector('input[name="zip"]');
+if (zipInput) {
+    zipInput.addEventListener('input', () => {
+        checkout.calculateOrderTotal();
+    });
+}
