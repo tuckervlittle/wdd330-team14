@@ -1,5 +1,17 @@
 import { loadHeaderFooter } from './utils.mjs';
-import { renderCartContents } from './ShoppingCart.mjs';
+import CheckoutProcess from './CheckoutProcess.mjs';
 
 loadHeaderFooter();
-renderCartContents();
+
+const order = new CheckoutProcess('so-cart', '.checkout-summary');
+order.init();
+
+document
+  .querySelector('#zip')
+  .addEventListener('blur', order.calculateOrderTotal.bind(order));
+
+document.querySelector('#pay-button').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  order.checkout();
+});
