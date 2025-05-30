@@ -54,7 +54,7 @@ document.getElementById('checkoutForm').addEventListener('submit', async (e) => 
     };
 
     try {
-        const result = await submitOrder(orderData);
+        await submitOrder(orderData);
         alert('Order submitted successfully!');
         // Optionally redirect or clear cart here
     } catch (err) {
