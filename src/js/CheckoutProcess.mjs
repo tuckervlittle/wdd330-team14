@@ -1,4 +1,6 @@
+
 import { getLocalStorage } from './utils.mjs';
+import { submitOrder } from './ExternalServices.mjs';
 
 export default class CheckoutProcess {
     constructor(key = "so-cart", outputSelector = "#order-summary") {
@@ -39,5 +41,56 @@ export default class CheckoutProcess {
         if (taxElem) taxElem.innerText = this.tax.toFixed(2);
         if (shippingElem) shippingElem.innerText = this.shipping.toFixed(2);
         if (totalElem) totalElem.innerText = this.orderTotal.toFixed(2);
+    }
+
+    packageItems(items) {
+        // Convert cart items to the required format for the order
+        return items.map(item => ({
+            id: item.Id,
+            name: item.Name,
+            price: Number(item.FinalPrice),
+            quantity: item.quantity || 1 // default to 1 if not tracked
+        }));
+    }
+
+    formDataToJSON(formElement) {
+        const formData = new FormData(formElement),
+            convertedJSON = {};
+        formData.forEach(function (value, key) {
+            convertedJSON[key] = value;
+        });
+        return convertedJSON;
+    }
+
+    async checkout(form) {
+        // Get form data as object
+        const order = this.formDataToJSON(form);
+
+        // Add required fields
+        order.orderDate = new Date().toISOString();
+        order.items = this.packageItems(getLocalStorage(this.key) || []);
+        order.orderTotal = this.orderTotal.toFixed(2);
+        order.shipping = this.shipping;
+        order.tax = this.tax.toFixed(2);
+
+        // Rename fields to match API requirements
+        order.fname = order.firstName;
+        order.lname = order.lastName;
+        order.cardNumber = order.ccnum;
+        order.expiration = order.exp;
+        order.code = order.cvv;
+
+        // Remove old keys
+        delete order.firstName;
+        delete order.lastName;
+        delete order.ccnum;
+        delete order.exp;
+        delete order.cvv;
+
+        // DEBUG: Log the order object
+        console.log("ORDER TO SUBMIT:", order);
+
+        // Submit order
+        return await submitOrder(order);
     }
 }
