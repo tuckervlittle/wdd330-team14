@@ -10,9 +10,11 @@ function productCardTemplate(product) {
   const discountHtml = discount > 0
     ? `<p class="discount-indicator">Save $${discount.toFixed(2)}!</p>`
     : "";
-  
-    
-  return `<li class="product-card">
+
+    // Add a class if discounted
+    const discountedClass = discount > 0 ? " discounted" : "";
+
+    return `<li class="product-card${discountedClass}">
         <a href="../product_pages/?product=${product.Id}">
             <img src="${product.Images.PrimaryMedium}" alt="${product.Name}">
             <h2 class="card_brand">${product.Brand.Name}</h2>
