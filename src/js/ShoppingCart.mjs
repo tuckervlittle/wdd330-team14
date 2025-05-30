@@ -12,7 +12,7 @@ export function renderCartContents() {
 
     console.log(cartTotal);
     const total = document.querySelector('.cart-total');
-    const checkout = document.getElementById('checkout')
+    const checkout = document.getElementById('checkout-button')
     total.innerHTML = `<b>Total: $${cartTotal.toFixed(2)}</b>`;
     if (cartTotal > 0) {
         total.parentElement.classList.remove('hide');
