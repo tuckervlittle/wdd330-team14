@@ -14,9 +14,7 @@
   </head>
 
   <body>
-    <header id="main-header" class="divider">
-      
-    </header>
+    <header id="main-header" class="divider"></header>
 
     <main class="divider">
       <section class="products">
@@ -28,9 +26,9 @@
           <legend>Customer Information</legend>
           <div class="checkout_name">
             <label for="fname">First Name</label>
-            <input type="text" name="fname" id="fname" required>
+            <input type="text" name="fname" id="fname" required />
             <label for="lname">Last Name</label>
-            <input type="text" name="lname" id="lname" required>
+            <input type="text" name="lname" id="lname" required />
           </div>
         </fieldset>
 
@@ -38,13 +36,13 @@
           <legend>Address</legend>
           <div class="checkout_address">
             <label for="street">Street Address</label>
-            <input type="text" name="sAddress" id="sAddress" required>
+            <input type="text" name="sAddress" id="sAddress" required />
             <label for="city">City</label>
-            <input type="text" name="city" id="city" required>
+            <input type="text" name="city" id="city" required />
             <label for="state">State</label>
-            <input type="text" name="state" id="state" required>
+            <input type="text" name="state" id="state" required />
             <label for="zip">Zip Code</label>
-            <input type="text" name="zip" id="zip" required>
+            <input type="text" name="zip" id="zip" required />
           </div>
         </fieldset>
 
@@ -52,11 +50,11 @@
           <legend>Payment</legend>
           <div class="checkout_payment">
             <label for="cardNumber">Credit Card Number</label>
-            <input type="text" name="cardNumber" id="cardNumber" required>
+            <input type="text" name="cardNumber" id="cardNumber" required />
             <label for="expiration">Expiration Date</label>
-            <input type="text" name="expiration" id="expiration" required>
+            <input type="text" name="expiration" id="expiration" required />
             <label for="code">Security Code</label>
-            <input type="text" name="code" id="code" required>
+            <input type="text" name="code" id="code" required />
           </div>
         </fieldset>
 
@@ -65,16 +63,14 @@
           <div class="order_summary">
             <span id="num-items">Items: </span>
             <span id="subTotal">Subtotal: </span>
-            <hr>
+            <hr />
             <span id="tax">Tax: </span>
             <span id="shipping">Shipping Estimate: </span>
             <span id="orderTotal">Order Total: </span>
           </div>
-      </fieldset>
-        <Button id="pay-button" type="submit">Checkout</Button>
-        
+        </fieldset>
+        <button id="pay-button" type="submit">Checkout</button>
       </form>
-
     </main>
 
     <footer id="main-footer">
