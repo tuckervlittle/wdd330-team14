@@ -237,6 +237,11 @@ button {
   font-size: 1em;
 }
 
+
+/* Product image */
+  .products img {
+  width: 100%;
+  }
 /* End product list card */
 
 .product-detail {
@@ -435,9 +440,12 @@ hr {
     columns: 4;
     column-gap: 1rem;
   }
+
+
 }
 
 footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
