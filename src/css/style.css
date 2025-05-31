@@ -402,7 +402,6 @@ header.divider,
   /* padding: 0 2em; */
 }
 
-
 .main-nav {
   display: flex;
   justify-content: flex-end;
@@ -426,7 +425,9 @@ main h2 {
   text-decoration: none;
   padding: 0.5em 1em;
   border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .register-link:hover,
@@ -455,10 +456,10 @@ main h2 {
   font-size: 1em;
 }
 
-#registerForm input[type="text"],
-#registerForm input[type="email"],
-#registerForm input[type="password"],
-#registerForm input[type="url"] {
+#registerForm input[type='text'],
+#registerForm input[type='email'],
+#registerForm input[type='password'],
+#registerForm input[type='url'] {
   width: 100%;
   padding: 0.45em 0.7em;
   border: 1px solid #bbb;
@@ -473,7 +474,7 @@ main h2 {
   outline: none;
 }
 
-#registerForm button[type="submit"] {
+#registerForm button[type='submit'] {
   background: #1976d2;
   color: #fff;
   border: none;
@@ -485,7 +486,7 @@ main h2 {
   transition: background 0.2s;
 }
 
-#registerForm button[type="submit"]:hover {
+#registerForm button[type='submit']:hover {
   background: #125ea2;
 }
 
