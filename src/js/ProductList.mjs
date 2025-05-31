@@ -1,5 +1,5 @@
 
-import { renderListWithTemplate } from './utils.mjs';
+import { renderListWithTemplate, getParam, initSearchForm } from './utils.mjs';
 
 function productCardTemplate(product) {
     // Calculate discount if needed
@@ -51,3 +51,4 @@ export default class ProductList {
         renderListWithTemplate(productCardTemplate, this.listElement, list);
     }
 }
+

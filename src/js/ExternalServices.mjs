@@ -35,4 +35,9 @@ export default class ExternalServices {
     };
     return await fetch(`${baseURL}:3000/checkout/`, options).then(convertToJson);
   }
+    async searchProducts(query) {
+    const response = await fetch(`${baseURL}products/search/${query}`);
+    const data = await convertToJson(response);
+    return data.Result;
+  }
 }

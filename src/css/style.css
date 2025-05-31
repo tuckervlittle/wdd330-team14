@@ -33,8 +33,10 @@ img {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: 0.25rem;
+
 }
+
 
 p {
   padding: 0.75rem;
@@ -108,6 +110,39 @@ p {
 .product-grid img {
   width: min(100px, 90%);
 }
+
+
+/* search bar */
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+  min-width: 150px;
+
+}
+
+#searchButton {
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#searchButton:hover {
+  background-color: var(--primary-color);
+}
+
 
 /* utility classes */
 .highlight {
