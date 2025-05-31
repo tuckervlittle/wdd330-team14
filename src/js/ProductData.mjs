@@ -25,4 +25,9 @@ export default class ProductData {
     
     return data.Result;
   }
+    async searchProducts(query) {
+    const response = await fetch(`${baseURL}products/search/${query}`);
+    const data = await convertToJson(response);
+    return data.Result;
+  }
 }
