@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage,  alertMessage } from "./utils.mjs";
 
 export default class ProductDetails {
 
@@ -14,6 +14,7 @@ export default class ProductDetails {
         document
             .getElementById('addToCart')
             .addEventListener('click', this.addProductToCart.bind(this));
+            alertMessage("Item successfully added to your cart!", false);
     }
 
     addProductToCart() {
