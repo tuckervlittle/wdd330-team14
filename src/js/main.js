@@ -1,3 +1,5 @@
-import { loadHeaderFooter } from './utils.mjs';
+import { initSearchForm, loadHeaderFooter, qs } from './utils.mjs';
 
-loadHeaderFooter();
+loadHeaderFooter().then(() => {
+    initSearchForm();
+});

@@ -38,4 +38,3 @@ export default class ExternalServices {
     const response = await fetch(`${baseURL}checkout`, options);
     return await convertToJson(response);
   }
-}
