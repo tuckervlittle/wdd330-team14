@@ -1,10 +1,12 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
 
-function convertToJson(res) {
+// Updated to always await the JSON and provide detailed error info
+async function convertToJson(res) {
+  const jsonResponse = await res.json();
   if (res.ok) {
-    return res.json();
+    return jsonResponse;
   } else {
-    throw new Error("Bad Response");
+    throw { name: 'servicesError', message: jsonResponse };
   }
 }
 
@@ -22,7 +24,7 @@ export default class ExternalServices {
   async findProductById(id) {
     const response = await fetch(`${baseURL}product/${id}`);
     const data = await convertToJson(response);
-    
+
     return data.Result;
   }
   async checkout(payload) {
@@ -33,6 +35,7 @@ export default class ExternalServices {
       },
       body: JSON.stringify(payload),
     };
-    return await fetch(`${baseURL}:3000/checkout/`, options).then(convertToJson);
+    const response = await fetch(`${baseURL}checkout`, options);
+    return await convertToJson(response);
   }
 }
