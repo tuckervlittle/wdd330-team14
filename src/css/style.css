@@ -425,6 +425,16 @@ hr {
   cursor: pointer;
 }
 
+.alert-list {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
+.alert-list p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+
 footer {
   font-size: var(--small-font);
   padding: 1em;
