@@ -12,6 +12,18 @@
   <body>
     <header id="main-header" class="divider"></header>
     <main class="divider">
+
+    <div class = "filter-bar">
+      <label for="sortSelect">Sort by:</label>
+      <select id="sortSelect"> 
+        <option value="">Default</option>
+        <option value="name-asc"> Name (A-Z)</option>
+        <option value="name-desc">Name (Z-A)</option>
+        <option value="price-asc">Price (Low to High)</option>
+        <option value="price-desc">Price (High to Low)</option>
+      </select>
+    </div> 
+
       <section class="products">
         <h2>Top Products: <span class="category-title"></span></h2>
         <ul class="product-list"></ul>
