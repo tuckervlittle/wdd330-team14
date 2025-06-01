@@ -12,6 +12,8 @@ const element = document.querySelector('.product-list');
 const searchQuery = getParam('search');
 
 const productList = new ProductList(category, dataSource, element);
+let allProducts = [];
+
 
 async function handleSearch(query) {
   const categories = ['tents', 'backpacks', 'sleeping-bags', 'hammocks'];
@@ -30,13 +32,15 @@ async function handleSearch(query) {
       product.Category?.toLowerCase().includes(query.toLowerCase()),
   );
 
+  allProducts = filtered;
   productList.renderList(filtered);
   document.querySelector('.category-title').textContent =
     `Results for "${query}"`;
+
 }
 
 if (searchQuery) {
   handleSearch(searchQuery);
 } else {
-  productList.init();
+
 }
