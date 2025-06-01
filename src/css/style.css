@@ -260,6 +260,27 @@ button {
   font-weight: bold;
   margin-top: 0.5em;
 }
+.newsletter{
+  text-align: center;
+  max-width: 500px;
+  margin: 30px auto;
+}
+.newsletter input [type="email"]{
+  padding: 10px;
+  width: 70%;
+  height: 50%;
+  text-align: center;
+  margin: 15px;
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+.newsletter button{
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #212503;
+  border-radius: 10px;
+}
+
 
 @media screen and (min-width: 500px) {
   body {
