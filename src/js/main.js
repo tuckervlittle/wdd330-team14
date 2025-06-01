@@ -1,5 +1,10 @@
-import { initSearchForm, loadHeaderFooter, qs } from './utils.mjs';
+import { initSearchForm, loadHeaderFooter } from './utils.mjs';
 
 loadHeaderFooter().then(() => {
-    initSearchForm();
+  // Hide Register link on registration.html
+  if (window.location.pathname.endsWith('registration.html')) {
+    const regLink = document.querySelector('a[href*="registration.html"]');
+    if (regLink) regLink.style.display = 'none';
+  }
+  initSearchForm();
 });
