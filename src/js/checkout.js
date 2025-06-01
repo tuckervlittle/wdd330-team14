@@ -9,13 +9,9 @@ order.init();
 document
   .querySelector('#zip')
   .addEventListener('blur', order.calculateOrderTotal.bind(order));
-  .querySelector('#zip')
-  .addEventListener('blur', order.calculateOrderTotal.bind(order));
 
+// Updated validation for button click
 document.querySelector('#pay-button').addEventListener('click', (e) => {
-  e.preventDefault();
-
-  order.checkout();
   e.preventDefault();
   const myForm = document.getElementById('checkout');
   const chk_status = myForm.checkValidity();
@@ -24,4 +20,3 @@ document.querySelector('#pay-button').addEventListener('click', (e) => {
     order.checkout();
   }
 });
-

@@ -1,4 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { alertMessage } from "./utils.mjs";
 
 export default class ProductDetails {
 
@@ -17,12 +18,19 @@ export default class ProductDetails {
     }
 
     addProductToCart() {
-        const cartItems = getLocalStorage("so-cart") || []; 
+        // const cartItems = getLocalStorage("so-cart") || []; 
         // if (!Array.isArray(cartItems)) {
         //     cartItems = [];
         // }
+        let cartItems = getLocalStorage("so-cart") || [];
+        if (!Array.isArray(cartItems)) {
+            cartItems = [];
+        }
         cartItems.push(this.product);
         setLocalStorage("so-cart", cartItems);
+
+        //Show feedback to the user
+        alertMessage('Item added to cart!');
     }
 
     renderProductDetails() {
