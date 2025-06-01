@@ -14,3 +14,19 @@ productList.init();
 
 const alert =new Alert();
 alert.showAlert();
+
+document.addEventListener('DOMContentLoaded',()=>{
+    const form = document.getElementById("newsletter-form");
+    const message= document.getElementById("newsletter-message");
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        
+        const email= document.getElementById("email").value;
+        console.log('user subscribe with email', email);
+
+        message.textContent='thank you for subscribing!';
+        
+        form.reset();
+    })
+})
