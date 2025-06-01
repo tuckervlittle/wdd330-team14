@@ -42,5 +42,5 @@ async function handleSearch(query) {
 if (searchQuery) {
   handleSearch(searchQuery);
 } else {
-
+  productList.init();
 }
