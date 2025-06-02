@@ -14,20 +14,6 @@ const searchQuery = getParam('search');
 const productList = new ProductList(category, dataSource, element);
 let allProducts = [];
 
-function sortAndRender(value) {
-  let sorted = [...allProducts];
-
-  if (value === 'name-asc') {
-    sorted.sort((a, b) => a.Name.localeCompare(b.Name));
-  } else if (value === 'price-asc') {
-    sorted.sort((a, b) => a.FinalPrice - b.FinalPrice);
-  }
-  productList.renderList(sorted);
-}
-
-document.getElementById('sortSelect').addEventListener('change', (e) => {
-  sortAndRender(e.target.value);
-});
 
 async function handleSearch(query) {
   const categories = ['tents', 'backpacks', 'sleeping-bags', 'hammocks'];
@@ -50,15 +36,11 @@ async function handleSearch(query) {
   productList.renderList(filtered);
   document.querySelector('.category-title').textContent =
     `Results for "${query}"`;
-}
 
-async function initList() {
-  allProducts = await dataSource.getData(category);
-  productList.renderList(allProducts);
 }
 
 if (searchQuery) {
   handleSearch(searchQuery);
 } else {
-  initList();
+  productList.init();
 }
